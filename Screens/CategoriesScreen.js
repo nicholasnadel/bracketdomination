@@ -61,7 +61,6 @@ postRequest() {
             keyExtractor={({id}, index) => id.toString()}
           
         />
-        <Button onPress={() => navigate('Home')} title="Press Me"/>
       </View>
     );
   }
