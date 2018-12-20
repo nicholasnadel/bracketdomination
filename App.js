@@ -4,12 +4,14 @@ import {createStackNavigator, createAppContainer} from 'react-navigation';
 import HomeScreen from './Screens/HomeScreen.js';
 import CategoriesScreen from './Screens/CategoriesScreen.js';
 import CategoryScreen from './Screens/CategoryScreen.js';
+import PlayScreen from './Screens/PlayScreen.js';
 
 
 const NavStack = createStackNavigator({
   Home: HomeScreen,
   Categories: CategoriesScreen,
   Category: CategoryScreen,
+  Play: PlayScreen,
 });
 
 
