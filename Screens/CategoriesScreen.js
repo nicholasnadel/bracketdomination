@@ -52,12 +52,12 @@ postRequest() {
     }
 
     return(
-      <View style={styles.hello}>
+      <View style={styles.categories}>
         <FlatList
           data={this.state.dataSource}
           renderItem={({item}) => <Text 
             onPress={() => navigate('Category')} 
-            style={styles.categoryStyle}>{item.title}</Text>}
+            style={styles.bracketStyle}>{item.title}</Text>}
             keyExtractor={({id}, index) => id.toString()}
           
         />
@@ -67,22 +67,25 @@ postRequest() {
 }
 
 const styles = StyleSheet.create({
-  hello: {
-    backgroundColor: '#E6E29A',
+  categories: {
+    backgroundColor: '#fbf8f6',
     color: 'white',
     flex: 1,
     paddingTop: 100
   },
-  categoryStyle: {
-    backgroundColor: '#1B72AC',
-    borderColor: 'black',
-    color: 'white',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 100,
+  bracketStyle: {
+    backgroundColor: 'white',
+    color: 'black',
+    flex: 1,
+    textAlign: 'center',
+    paddingTop: 50,
+    paddingBottom: 50,
     marginTop: 10,
-    width: 100
-  }
+    marginRight: 10,
+    marginLeft: 10,
+    width: 150,
+    borderWidth: 1,
+    borderColor: 'black',
+  },
 });
 

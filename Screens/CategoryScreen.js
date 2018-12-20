@@ -50,38 +50,47 @@ postRequest() {
     }
 
     return(
-      <View style={styles.hello}>
+      <View style={styles.contentContainer}>
         <Text style={styles.title}>{this.state.categoryTitle}</Text>
+        <View style={styles.bracketWrapper}>
         <FlatList
+          numColumns={2}
           data={this.state.dataSource}
           renderItem={({item}) => <Text 
             onPress={() => navigate('Home')} 
-            style={styles.categoryStyle}>{item.title}</Text>}
+            style={styles.bracketStyle}>{item.title}</Text>}
             keyExtractor={({id}, index) => id.toString()}
           
         />
-        <Button onPress={() => navigate('Home')} title="Play!"/>
+        </View>
+        <Button onPress={() => navigate('Play')} title="Play!"/>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  hello: {
+  contentContainer: {
+    backgroundColor: '#fbf8f6',
+    flex: 1,
+    justifyContent: 'space-around',
+  },
+  bracketWrapper: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+  bracketStyle: {
     backgroundColor: 'white',
     color: 'black',
-    justifyContent: 'center',
     flex: 1,
-  },
-  categoryStyle: {
-    backgroundColor: '#1B72AC',
-    color: 'white',
-    flex: 1,
-    justifyContent: 'center',
-    height: 80,
+    textAlign: 'center',
+    paddingTop: 50,
+    paddingBottom: 50,
     marginTop: 10,
+    marginRight: 10,
+    marginLeft: 10,
     width: 100,
-    borderWidth: 5,
+    borderWidth: 1,
     borderColor: 'black',
   },
   title: {
@@ -94,6 +103,9 @@ const styles = StyleSheet.create({
       backgroundColor: 'green',
       height: 100,
       width: 100,
+  },
+  bracketWrapper: {
+      justifyContent: 'space-between',
   }
 });
 
